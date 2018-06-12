@@ -5,8 +5,19 @@ const drawMap = function(){
   const zoomLevel = 15;
   const mainMap = new MapWrapper(mapDiv, southend, zoomLevel);
   // mainMap.addMarker(javaStreet);
+}
 
+const goToGdansk = function() {
+  const mapDiv = document.getElementById("main-map");
+  const buttonClick = document.querySelector("button");
+  const gdansk = [54.372158, 18.638306];
+  const zoomLevel = 15;
+  const mainMap = new MapWrapper(mapDiv, gdansk, zoomLevel);
+}
+
+const goToGdansk = function(){
+  const button = document.querySelector("button");
 
 }
 
-window.addEventListener('load', drawMap);
+window.addEventListener('load', drawMap, 'click', goToGdansk);
