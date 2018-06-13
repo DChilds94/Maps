@@ -6,11 +6,6 @@ const MapWrapper = function(element, coords, zoom){
   this.map.on("click", function(event){
       this.addMarker(event.latlng);
   }.bind(this))
-
-  this.map.on('click', function(event){
-    console.log("test");
-    this.goToGdansk(event.latlng);
-  }.bind(this))T
 }
 
 MapWrapper.prototype.addMarker = function (coords) {
@@ -18,5 +13,5 @@ MapWrapper.prototype.addMarker = function (coords) {
 };
 
 MapWrapper.prototype.goToGdansk = function (coords) {
-  L.marker(coords).panTo(this.map);
+    this.map.panTo(coords)
 };
